@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Joke Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Joke Generator</h1>
+  </header>
+  <main>
+    <section id="joke-section">
+      <div id="joke-container">
+        <h2 id="joke-category-title">Select a category!</h2>
+        <p id="setup">Press a button to get a joke.</p>
+        <p id="punchline"></p>
+      </div>
+    </section>
+    <section id="controls">
+      <div class="button-container">
+        <button class="btn-random" onclick="getJoke('Any')">🎲 Random Joke</button>
+        <button class="btn-programming" onclick="getJoke('Programming')">💻 Programming Joke</button>
+        <button class="btn-misc" onclick="getJoke('Misc')">🌀 Misc Joke</button>
+        <button class="btn-pun" onclick="getJoke('Pun')">🤣 Pun</button>
+        <button class="btn-spooky" onclick="getJoke('Spooky')">👻 Spooky Joke</button>
+        <button class="btn-christmas" onclick="getJoke('Christmas')">🎄 Christmas Joke</button>
+      </div>
+      <div class="toggle-container">
+        <button id="darkModeToggle" onclick="toggleDarkMode()">🌗 Toggle Dark Mode</button>
+      </div>
+    </section>
+  </main>
+  <script src="script.js?v=1.1"></script>
+</body>
+</html>
