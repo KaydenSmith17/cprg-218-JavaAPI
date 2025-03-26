@@ -1,0 +1,188 @@
+
+
+
+
+:root {
+    --primary-bg: #f5f7fa;
+    --secondary-bg: #c3cfe2;
+    --text-color: #333;
+    --header-border: #ddd;
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --card-border: #ccc;
+    --shadow-color: rgba(0, 0, 0, 0.15);
+    --button-random: #ff6b6b;
+    --button-programming: #1dd1a1;
+    --button-misc: #54a0ff;
+    --button-pun: #feca57;
+    --button-spooky: #5f27cd;
+    --button-christmas: #10ac84;
+    --toggle-bg: #576574;
+    --toggle-hover: #2f3640;
+  }
+  
+  /* Global Reset & Base */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+    color: var(--text-color);
+    min-height: 100vh;
+    padding: 40px;
+    transition: background 0.5s, color 0.5s;
+  }
+  
+  /* Header Styling */
+  header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 3px solid var(--header-border);
+    padding-bottom: 15px;
+  }
+  
+  h1 {
+    font-size: 2.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+  
+  /* Grid Layout for Main Content */
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  /* On larger screens, use grid areas to swap sections:
+     - The control section appears on the left
+     - The joke section appears on the right */
+  @media (min-width: 768px) {
+    .grid-container {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "controls joke";
+    }
+    
+    .control-section {
+      grid-area: controls;
+    }
+    
+    .joke-section {
+      grid-area: joke;
+    }
+  }
+  
+  /* Joke Section Card */
+  .joke-section #joke-container {
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 6px 12px var(--shadow-color);
+    transition: transform 0.3s, background 0.5s, border 0.5s;
+  }
+  
+  .joke-section #joke-container:hover {
+    transform: scale(1.02);
+  }
+  
+  #joke-category-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #444;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Control Section */
+  .control-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  .control-section button {
+    padding: 14px 25px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.2s, opacity 0.3s;
+  }
+  
+  .control-section button:active {
+    transform: scale(0.98);
+  }
+  
+  .control-section button:hover {
+    transform: translateY(-5px);
+    opacity: 0.95;
+  }
+  
+  /* Button Specific Colors */
+  .btn-random { background-color: var(--button-random); }
+  .btn-programming { background-color: var(--button-programming); }
+  .btn-misc { background-color: var(--button-misc); }
+  .btn-pun { background-color: var(--button-pun); }
+  .btn-spooky { background-color: var(--button-spooky); }
+  .btn-christmas { background-color: var(--button-christmas); }
+  
+  /* Toggle Button */
+  .toggle-container {
+    text-align: center;
+  }
+  
+  #darkModeToggle {
+    padding: 14px 25px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--toggle-bg);
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.4s, transform 0.2s;
+  }
+  
+  #darkModeToggle:hover {
+    background-color: var(--toggle-hover);
+    transform: translateY(-3px);
+  }
+  
+  /* Punchline Pop Animation */
+  @keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+  }
+  
+  .pop {
+    animation: pop 0.5s ease;
+  }
+  
+  /* Dark Mode Styles */
+  body.dark-mode {
+    background: linear-gradient(135deg, #2f3640, #353b48);
+    color: #f4f4f4;
+  }
+  
+  body.dark-mode header {
+    border-color: #444;
+  }
